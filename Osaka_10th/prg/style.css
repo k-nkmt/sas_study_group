@@ -1,0 +1,32 @@
+:root{
+  font-size:8pt;
+  font-family: 'Courier';
+} 
+
+.systemtitle, .systemtitle2,.systemtitle3, .linecontent{text-align:left;}
+.systemfooter{text-align:right;}
+.linecontent:first-child{border-top-width:1pt;}
+
+.table{
+    border-color:black;
+    border-style:solid;
+    border-top-width:1pt;
+    width: 100% ;
+}
+
+.table.header, .table.data{
+    padding: 0 ;
+    margin: 0 ;
+}
+.data{vertical-align:top;}
+
+.header{
+    vertical-align:bottom;
+    text-align: resolve('%head_align') ;
+}
+.header:not(:empty){border-bottom-width: 1pt;}
+
+td.data:not(:empty){padding-left: resolve('%col_margin') ;}
+
+.data:empty, th.data{border-top-width: 1pt;}
+td.data:not(:empty){border-top-width:resolve('%group_line');}
