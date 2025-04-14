@@ -1,0 +1,95 @@
+/* @theme light_code */
+@import 'default';
+
+:root {
+    font-family: "BIZ UDPGothic";
+    --main-color: rgb(0,113,188);
+    --accent-color: rgb(224,50,83);
+    --text-color: #333;
+  }
+
+section{
+    padding-top: 100px;
+}
+
+table {width: 90%;display:table; margin: 0 auto; font-size: smaller;}
+thead th {text-align: center !important;}
+h2 {
+    position: absolute;
+    top: 0px; 
+    left: 0px;
+    padding: 20px 40px;
+    display: inline-block;
+    width: 100%;
+    border-bottom: 5px solid #aaa;
+    margin-bottom: 10px;
+}
+em strong:not(code){
+    font-size: 120%;
+    color:var(--accent-color);
+    font-style: normal;
+}
+
+strong{font-size: 120%;color:var(--main-color);}
+
+code.language-sas span.hljs-keyword {
+    color:#224c7c;
+    font-weight: bold;
+}
+code.language-sas span.hljs-comment {color:#647f29;}
+
+section::after {
+    font-size: 1.5em;
+    color:#ddd;
+  }
+
+/* TOC Slide */
+section.toc {background: linear-gradient(to right, var(--main-color) 150px, #fff 0px);}
+section.toc h2 {
+    border-bottom:0 ; 
+    padding: 20px 20px;
+    color: #fff; 
+}
+section.toc a{color:var(--text-color);}
+section.toc p{
+    position: absolute;
+    top: 0px;
+    left: 180px;
+    padding-top:20px;
+    color: var(--text-color) ;
+    font-weight: bold;
+}
+section.toc footer{left:180px;}
+section.toc > ul{
+    list-style-type: none;
+    position: relative;
+    left: 50px;
+}
+
+/* Two Code Element*/
+section:has(> marp-pre:nth-of-type(1)):has(> marp-pre:nth-of-type(2)) {
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+}
+
+/* 1st Slide, Sep Slide(Only h2,h3) */
+section#\0031  h1{
+    font-size: 2em;
+    text-align: center;
+    color:var(--text-color) ;
+}
+section:has(> h2):not(:has(> *:not(h2):not(h3))) h2 {
+    font-size: 2em;
+    position: relative;
+    text-align: center;
+    padding: 0;
+    border-bottom:0 ;
+}
+section#\0031  h3,
+section:has(> h3):not(:has(> *:not(h2):not(h3))) h3 {
+    font-size: 1.5em;
+    position: relative;
+    padding: 0;
+    border-bottom:0 ;
+    text-align: center;
+}
